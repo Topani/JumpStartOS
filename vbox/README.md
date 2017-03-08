@@ -5,7 +5,7 @@ These are instructions for installing the virtual box guest additions. These ins
 1. From a shell or terminal run `sudo mount /dev/dvd /mnt`
 
 ##Second Install needed packages
-The virtual box scripts need gcc and make in order to complete installation. To get these packages run the following commands
+The virtual box scripts need **gcc** and **make** in order to complete installation. To get these packages run the following commands
 ```bash
 sudo apt-get install gcc -y
 ```
@@ -15,4 +15,8 @@ sudo apt-get install make -y
 ##Finally run install script
 ```bash
 sudo /mnt/VBoxLinuxAdditions.run
+```
+And reboot
+```bash
+sudo reboot
 ```
