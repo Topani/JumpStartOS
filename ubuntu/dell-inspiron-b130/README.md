@@ -33,14 +33,14 @@ This article is specifically written for my installation of Ubuntu 16.04.1 Serve
 * 02:03.0 Network controller: Broadcom Limited BCM4318 [AirForce One 54g] 802.11g Wireless LAN Controller (rev 02)
 
 
-##Install Base##
-**Installed Ubuntu 16.04.2 LTS (xenial)**
+#OS Installation#
+##Installed Ubuntu Server 16.04.2 LTS (xenial)##
 * Normal system utilities only
 * 2 GB Swap
 * 58 GB mounted to /
 
 ------------------------------------------
 
-#After Install#
+##After Install##
 
 
