@@ -41,6 +41,35 @@ This article is specifically written for my installation of Ubuntu 16.04.1 Serve
 
 ------------------------------------------
 
-##After Install##
+#After Install#
 
+##WiFi Network Setup##
+Wireless LAN controller is a Broadcom Limited BCM4318. Driver for this network controller is not a part of the normal Ubuntu driver set and I've found also not part of any other Linux variant. Remember this is a server OS and I'm trying to have some GUI options. Network Manager is a software package that includes a text gui wireless network manager. Driver and Network Manager can be installed with the following commands and also requires a reboot:
 
+```bash
+#updates
+sudo apt-get update
+sudo update-pciids
+
+#wireless controller driver
+sudo apt-get install firmware-b43-installer
+
+#install network manager
+sudo network-manager
+
+#reboot
+sudo reboot
+```
+
+##GUI Install##
+I opted to install OpenBox, which is a minimal multi-window desktop UI. It is highly customizable, but right now I really only wanted it for xwindows, multi-windows open, and for a graphical browser. OpenBox requires for xwindow support to be installed. Commands to install both are here:
+```bash
+sudo apt-get install xorg
+sudo apt-get install openbox
+```
+Reference: https://help.ubuntu.com/community/ServerGUI
+##Other Tools##
+OpenBox is basically a blank screen. Two useful tools I found that I needed are a battery monitor and a clock. These things are already on the system open a terminal and run them with these commands.
+* `date` - Gives date and time in terminal window
+* `xclock` - xwindow analog clock
+* `batmon` - xwindow battery indicator and info 
