@@ -60,6 +60,23 @@ sudo network-manager
 #reboot
 sudo reboot
 ```
+###More About Network Interfaces###
+Since this is a laptop running Ubuntu server of course I disconnected the wired LAN as soon as the wireless connection was established. Then I ran into an odd behavior where the boot up was waiting 5 minutes for the wired LAN network connection to start, which would end in timeout before boot would proceed. Either way this is a laptop and will mostly never have a hardwired connection. To resolve this 5 minute boot wait I had to change my */etc/network/interfaces* file to have *allow-hotplug* for my wired LAN connection. In my system this is network interface *eth0*. Currently my */etc/network/interfaces* file has these contents:
+```bash
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+#auto eth0
+allow-hotplug eth0
+iface eth0 inet dhcp
+```
 
 ##GUI Install##
 I opted to install OpenBox, which is a minimal multi-window desktop UI. It is highly customizable, but right now I really only wanted it for xwindows, multi-windows open, and for a graphical browser. OpenBox requires for xwindow support to be installed. Commands to install both are here:
